@@ -9,18 +9,19 @@ public class ContaTerminal{
             Exibir a Mensagem de conta criada;
         */
 
-        //Autenticação
+        /*Identificação do usuário
+          Lê o input digitado para pegar o nome do usuário
+        */
         Scanner userName = new Scanner(System.in);
         System.out.println("Bem vindo ao Banco DIO, digite seu nome de usuário para continuar.");
-        
         String user = userName.nextLine();
         System.out.print("\033[H\033[2J");  
         System.out.flush();
-        double saldo = 0.0;
+        double saldo = 15;
         String welcome = String.format("Bem vindo, %s, seu saldo atual é de %s escolha a opção que deseja acessar", user, saldo);
         System.out.println(welcome);
         System.out.println("""
-                            1. Realizar Dep\u00f3sito 
+                            1. Realizar Saque 
                             2. Sair""");
         Scanner userInput = new Scanner(System.in);
         char inputChar = userInput.next().charAt(0);
@@ -28,12 +29,15 @@ public class ContaTerminal{
             case '1':
                 System.out.print("\033[H\033[2J");  
                 System.out.flush();
-                System.out.println("Digite o valor que você deseja depositar:");
                 Scanner deposito = new Scanner(System.in);
-                double valorDepositado = Double.parseDouble(deposito.nextLine());
-                saldo += valorDepositado;
-                String saldoAtual = String.format("Seu saldo atual é de: %s", saldo);
-                System.out.println(saldoAtual);
+                double valorSolicitado = 22;
+                if (saldo >= valorSolicitado){
+                    saldo -= valorSolicitado;
+                    String saldoAtual = String.format("Seu saldo atual é de: %s", saldo);
+                    System.out.println(saldoAtual);}
+                else {System.out.println("Saldo Insuficiente");}
+                // String saldoAtual = String.format("Seu saldo atual é de: %s", saldo);
+                // System.out.println(saldoAtual);
                 break;
             case '2':
                 System.out.print("\033[H\033[2J");  
