@@ -29,8 +29,10 @@ public class ContaTerminal{
             case '1':
                 System.out.print("\033[H\033[2J");  
                 System.out.flush();
-                Scanner deposito = new Scanner(System.in);
-                double valorSolicitado = 22;
+                System.out.println("Digite o valor que você deseja sacar:");
+                Scanner saque = new Scanner(System.in);
+                double valorSolicitado = Double.parseDouble(saque.nextLine());
+                saldo -= valorSolicitado;
                 if (saldo >= valorSolicitado){
                     saldo -= valorSolicitado;
                     String saldoAtual = String.format("Seu saldo atual é de: %s", saldo);
