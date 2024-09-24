@@ -36,8 +36,6 @@ public class ContaTerminal{
                     String saldoAtual = String.format("Seu saldo atual é de: %s", saldo);
                     System.out.println(saldoAtual);}
                 else {System.out.println("Saldo Insuficiente");}
-                // String saldoAtual = String.format("Seu saldo atual é de: %s", saldo);
-                // System.out.println(saldoAtual);
                 break;
             case '2':
                 System.out.print("\033[H\033[2J");  
@@ -49,18 +47,5 @@ public class ContaTerminal{
                 break;
                 // throw new AssertionError();
         }
-        //Menu Principal
-            /*Opções:   Ver Saldo
-             *          Realizar depósito
-             *          Realizar saque
-             *          Sair
-            */
-        //Mostrar saldo
-            /*
-             *          Mostrar Saldo
-             *          Voltar
-             *          Sair
-             */
-        //
     }
 }
